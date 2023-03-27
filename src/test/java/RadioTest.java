@@ -3,14 +3,15 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Radio;
 
 public class RadioTest {
+
     @Test
     public void shouldSetRadioStation1() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(10);
+        radio.setCurrentRadioStation(8);
         radio.nextRadioStation();
 
 
-        int expected = 0;
+        int expected = 9;
         int actual = radio.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -32,18 +33,31 @@ public class RadioTest {
     @Test
     public void shouldSetRadioStation3() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(8);
+        radio.setCurrentRadioStation(10);
         radio.nextRadioStation();
 
 
-        int expected = 9;
+        int expected = 1;
+        int actual = radio.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldSetRadioStation4() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(-6);
+        radio.nextRadioStation();
+
+
+        int expected = 1;
         int actual = radio.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
+
     @Test
-    public void shouldSetRadioStation4() {
+    public void shouldSetRadioStation5() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(-1);
         radio.prevRadioStation();
@@ -56,7 +70,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetRadioStation5() {
+    public void shouldSetRadioStation6() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(0);
         radio.prevRadioStation();
@@ -69,7 +83,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetRadioStation6() {
+    public void shouldSetRadioStation7() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(1);
         radio.prevRadioStation();
@@ -80,6 +94,19 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void shouldSetRadioStation8() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(12);
+        radio.prevRadioStation();
+
+
+        int expected = 9;
+        int actual = radio.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 
     @Test
     public void shouldSetVolume1() {

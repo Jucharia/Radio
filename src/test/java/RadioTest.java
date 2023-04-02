@@ -3,10 +3,19 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Radio;
 
 public class RadioTest {
+    Radio radio = new Radio();
+
+    @Test
+    public void getCurrentRadioStation() {
+        radio.setCurrentRadioStation(16);
+
+        int expected = 0;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldSetRadioStation1() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(8);
         radio.nextRadioStation();
 
@@ -19,7 +28,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStation2() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(9);
         radio.nextRadioStation();
 
@@ -32,7 +40,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStation3() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(10);
         radio.nextRadioStation();
 
@@ -42,9 +49,9 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetRadioStation4() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(-6);
         radio.nextRadioStation();
 
@@ -58,7 +65,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStation5() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(-1);
         radio.prevRadioStation();
 
@@ -71,7 +77,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStation6() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(0);
         radio.prevRadioStation();
 
@@ -84,7 +89,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioStation7() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(1);
         radio.prevRadioStation();
 
@@ -94,9 +98,9 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetRadioStation8() {
-        Radio radio = new Radio();
         radio.setCurrentRadioStation(12);
         radio.prevRadioStation();
 
@@ -110,7 +114,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume1() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(99);
         radio.increaseVolume();
 
@@ -123,7 +126,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume2() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(100);
         radio.increaseVolume();
 
@@ -136,7 +138,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume3() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(101);
         radio.increaseVolume();
 
@@ -149,7 +150,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume4() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(-1);
         radio.decreaseVolume();
 
@@ -162,7 +162,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume5() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(0);
         radio.decreaseVolume();
 
@@ -175,7 +174,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume6() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(1);
         radio.decreaseVolume();
 
